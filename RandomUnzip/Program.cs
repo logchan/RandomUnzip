@@ -28,6 +28,8 @@ namespace RandomUnzip
 
         static void Run(Option options)
         {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+
             var encoding = Encoding.GetEncoding(options.Encoding ?? "UTF-8");
             Directory.CreateDirectory(options.OutputPath);
 
